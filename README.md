@@ -11,6 +11,7 @@
 ## 2. 시스템 아키텍처 (System Architecture)
 
 Raspberry Pi가 제어와 서버 역할을 모두 수행한다. 하드웨어 제어를 위해 **Python 스크립트**를, 웹 서비스 로직을 위해 **Node.js 애플리케이션**을 동시에 운영하며 두 프로세스는 내부 통신(IPC)을 통해 데이터를 교환한다.
+```
 
 +-----------------------------------------------------------------+      HTTPS/WSS      +--------------------------+
 |                      Raspberry Pi                               | <----------------> |    웹 대시보드 (Vue.js)    |
@@ -23,7 +24,7 @@ Raspberry Pi가 제어와 서버 역할을 모두 수행한다. 하드웨어 제
 |           V                 V                V                V
 |     [   RFID   ]      [  Keypad  ]      [  Servo   ]      [  LED/Buzzer  ] (GPIO)
 +-----------------------------------------------------------------+
-
+```
 
 ## 3. 주요 기능 명세 (Features)
 
@@ -57,7 +58,7 @@ Raspberry Pi가 제어와 서버 역할을 모두 수행한다. 하드웨어 제
 ## 4. 데이터 구조 정의 (Data Schema)
 
 ### 4.1. 데이터베이스 테이블
-
+```
 -   **`users`**
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
@@ -77,7 +78,7 @@ Raspberry Pi가 제어와 서버 역할을 모두 수행한다. 하드웨어 제
 | `scanned_uid`| TEXT | NULL | 스캔된 카드 UID (실패 기록용) |
 | `details` | TEXT | NULL | 실패 사유 등 상세 정보 |
 | `timestamp` | DATETIME | DEFAULT CURRENT_TIMESTAMP | 이벤트 발생 시간 |
-
+```
 
 ## 5. 프론트엔드 UI/UX 상세 레이아웃
 
